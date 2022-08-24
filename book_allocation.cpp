@@ -1,49 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool isPossible(int arr[], int n, int m, int curr_min)
-{
-    int studentsRequired = 1;
-    int curr_sum = 0;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] > curr_min)
-            return false;
-        if (curr_sum + arr[i] > curr_min) {
-            studentsRequired++;
-            curr_sum = arr[i];
-            if (studentsRequired > m)
-                return false;
+bool isPossiblr(int arr,int n,int m,int mid){
+    int studentCount=1;
+    int pageSum=0;
+    for(int i=0;i<n;i++){
+        if(pageSum + arr[i]<= mid){
+            pageSum += arr[i];
         }
-        else
-            curr_sum += arr[i];
+        else{
+            studentCount++;
+            if(studentCount > m ||arr[i]> mid){
+                return false;
+            }
+            pageSum =0;
+            pageSum += arr[i;]
+        }
     }
     return true;
-} 
-int findPages(int arr[], int n, int m)
-{
-    long long sum = 0; 
-    if (n < m)
-        return -1; 
-    for (int i = 0; i < n; i++)
-        sum += arr[i];
-    int start = 0, end = sum;
-    int result = INT_MAX;
-    while (start <= end) {
-        int mid = (start + end) / 2;
-        if (isPossible(arr, n, m, mid)) {            
-            result = mid;
-            end = mid - 1;
-        }
-        else  
-            start = mid + 1;
-    }
-    return result;
 }
-int main()
-{
-    int arr[] = { 12, 34, 67, 90 };
-    int n = sizeof arr / sizeof arr[0];
-    int m = 2; 
-    cout << "Minimum number of pages = "
-         << findPages(arr, n, m) << endl;
-    return 0;
+int allocationBooks(int arry[],int n,int m){
+int s=0;
+int sum=0;
+for(int i=0; i<n;i++){
+    sum+=arr[i];
+}
+int e=sum;
+int ans=-1
+int mid=s+ (e-s)/2;
+while(s<=e){
+    if(ispossible(arr,n,m,mid)){
+        ans=mid;
+        e=mid-1;
+    }
+    else{
+        s= mid+1;
+    }
+    mid= s + (e-s)/2;
+}
+return ans;
+}
+int main(){
+    int arr[]={12,34,67,90};
+    cout<<allocationBooks(arr,4,2);
 }
