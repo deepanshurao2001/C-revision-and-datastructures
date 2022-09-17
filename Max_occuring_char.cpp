@@ -1,11 +1,11 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 char getMaxOccCharacter(string s){
     int arr[26]={0};
-    for (int i=0;i<s.length();i++){
+    for (int i=0 ; i<s.length() ; i++){
         char ch = s[i];
         int number = 0;
-        if(ch>='a' && ch>='z'){
+        if(ch>='a' && ch<='z'){
             number = ch - 'a';
         }
         else{
@@ -25,6 +25,7 @@ char getMaxOccCharacter(string s){
 }
 int main(){
       string s;
+      cout<<"Enter the string:";
       cin>>s;
         cout<<getMaxOccCharacter(s);
         return 0;
