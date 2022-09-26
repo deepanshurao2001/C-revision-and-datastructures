@@ -20,7 +20,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target){
         mid = start +(end-start)/2;
     }
     return 0;
-}
+} 
 int main(){
     vector<vector<int>> arr={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
     cout<<searchMatrix(arr,7);
