@@ -31,6 +31,8 @@ while(index1 < len1){
 while(index2 < len2){
     arr[mainArrayIndex++] = second[index2++];
 }
+    delete []first;
+    delete []second;
 }
 void mergeSort(int *arr,int s,int e){
     if(s >= e){
