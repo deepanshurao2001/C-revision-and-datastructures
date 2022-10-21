@@ -25,13 +25,19 @@ public:
         level = l;
     }
     void print(){
-        cout<<"level is:"<<level<<endl;
-        cout<<"Health is:"<<health<<endl;
+        cout<<"level is:"<<this->level<<endl;
+        cout<<"Health is:"<<this->health<<endl;
+    }
+    //copy constructor
+    Hero (Hero& temp){
+        this->health= temp.health;
+        this->level = temp.level;
     }
 };
 int main(){
     Hero suresh(70 , 'C');
     suresh.print();
+    
     Hero ritesh(suresh);
     ritesh.print();
     /*ritesh.health= suresh.health;
