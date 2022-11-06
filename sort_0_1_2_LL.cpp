@@ -28,7 +28,7 @@ void insertAtHead(Node* &head,Node* &tail, int d){
     head = temp;
     }
 }
-Node* sortList(Node* head){
+void sortList(Node* &head){
     int zeroCount = 0;
     int oneCount = 0;
     int twoCount = 0;
@@ -59,7 +59,7 @@ Node* sortList(Node* head){
         }
         temp = temp -> next;
     }
-    return head;
+    
 }
 void print(Node* head){
     if(head == NULL){
@@ -83,7 +83,7 @@ int main(){
     insertAtHead(head,tail, 2);
     insertAtHead(head,tail, 1);
     print(head);
-    Node* aftersorting = sortList(head);
-    print(aftersorting);
+    sortList(head);
+    print(head);
     return 0;
 }
