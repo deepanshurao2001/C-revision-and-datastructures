@@ -28,7 +28,7 @@ void insertAtHead(Node* &head,Node* &tail, int d){
     head = temp;
     }
 }
-void sortList(Node* &head){
+void sortList(Node* head){
     int zeroCount = 0;
     int oneCount = 0;
     int twoCount = 0;
