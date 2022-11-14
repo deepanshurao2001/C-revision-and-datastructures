@@ -1,77 +1,46 @@
 #include<iostream>
 #include<stack>
 using namespace std;
-class Stack{
+class TwoStack{
     //properties
      public:
      int *arr;
-     int top;
+     int top1;
+     int top2;
      int size;
-     Stack(int size){
+     TwoStack(int size){
         this-> size = size;
-        arr = new int [size];
-        top = -1;
+        top1 = -1;
+        top2 = size;
+        arr = new int[size];
      }
-     void push(int element){
-        if(size - top > 1){
-            top++;
-            arr[top] = element;
+     void push1(int element){
+        if(top2 - top1 > 1){
+            top1++;
+            arr[top1] = element;
         }
         else{
             cout<<"Stack Overflow"<<endl;
         }
      }
-     void pop(){
-        if(top >=0){
-            top--;
+      void push2(int element){
+        if(top2 - top1 > 1){
+            top2--;
+            arr[top2] = element;
+        }
+        else{
+            cout<<"Stack Overflow"<<endl;
+        }
+     }
+     
+     int pop1(){
+        if(top1 >=0){
+            int ans = arr[top1];
+            top1--;
+            return ans;
         }
         else{
             cout<<"Stack UnderFlow"<<endl;
         }
      }
-     int peek(){
-        if(top >=0)
-        return arr[top];
-        else{
-            cout<<"Stack is Empty"<<endl;
-            return -1;
-        }
-     }
-     bool isEmpty(){
-        if(top == -1){
-            return true;
-        }
-        else{
-            return false;
-        }
-     }
-};
-int main(){
-  /* stack<int > s;
-    s.push(2);
-    s.push(3);*/
-    Stack st(5);
-    st.push(22);
-    st.push(43);
-    st.push(44);
-    cout<<st.peek()<<endl;
-    st.pop();
-    cout<<st.peek()<<endl;
-    st.pop();
-    cout<<st.peek()<<endl;
-    st.pop();
-    cout<<st.peek()<<endl;
-    if(st.isEmpty()){
-        cout<<"Stack is Empty"<<endl;
-    }
-    else{
-        cout<<"Stack is not empty"<<endl;
-    }
-    st.push(6);
-        if(st.isEmpty()){
-        cout<<"Stack is Empty"<<endl;
-    }
-    else{
-        cout<<"Stack is not empty"<<endl;
-    }
-}
+}; 
