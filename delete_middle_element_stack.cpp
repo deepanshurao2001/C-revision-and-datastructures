@@ -29,6 +29,8 @@ int main(){
     nums.push(4);
     nums.push(5);
     PrintStack(nums);
+    cout<<endl;
     solve(nums,0,nums.size());
+    PrintStack(nums);
 
 }
