@@ -15,7 +15,9 @@ void reverse(stack<int> & s){
         return ;
     }
     int num = s.top();
-    s.
+    s.pop();
+    reverse(s);
+    insertAtBottom(s,num);
 }
 void print(stack<int> s){
      if(s.empty()){
@@ -36,8 +38,8 @@ int main(){
     s.push(6);
     s.push(7);
     print(s);
-    insertAtBottom(s,10);
-    cout<<"After pushing at bottom"<<endl;
+    reverse(s);
+    cout<<"After reversing stack"<<endl;
     print(s);
     
 }
