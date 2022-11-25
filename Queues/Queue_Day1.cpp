@@ -14,6 +14,7 @@ class Queue{
     }
     bool isEmpty(){
          if(qfront == rear){
+            cout<<qfront<<rear;
             return true;
          }
          else{
@@ -70,5 +71,17 @@ int main(){
     q.print();
     q.dequeue();
     q.print();
+     q.dequeue();
+    q.print();
+     q.dequeue();
+    q.print();
+     q.dequeue();
+    q.print();
+     q.dequeue();
+    q.print();
+     q.dequeue();
+    q.print();
+     q.dequeue();
+    cout<<q.isEmpty();
     return 0;
 }
