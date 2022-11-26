@@ -12,6 +12,7 @@ class Circular{
         front = rear = -1;
     }
     bool enqueue(int value){
+        cout<<front<<rear<<endl;
         if((front ==0 && rear == size-1) || (rear ==(front -1)%(size-1))){
             cout<<"Queue is full";
             return false;
@@ -32,6 +33,7 @@ class Circular{
         return true;
     }
     int dequeue(){
+        cout<<front<<rear<<endl;
         if(front == -1){
             cout<<"Queue is empty"<<endl;
             return -1;

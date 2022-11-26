@@ -150,7 +150,6 @@ int main(){
     q.pushRear(5);
     q.pushFront(6);
     q.pushRear(7);
-    q.print();
     cout<<q.popFront()<<endl;
     cout<<q.popFront()<<endl;
     cout<<q.popFront()<<endl;

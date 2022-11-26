@@ -14,7 +14,7 @@ class Queue{
     }
     bool isEmpty(){
          if(qfront == rear){
-            cout<<qfront<<rear;
+            cout<<qfront<<rear<<endl;
             return true;
          }
          else{
@@ -28,9 +28,11 @@ class Queue{
         else{
             arr[rear] = data;
             rear++;
+            cout<<qfront<<rear<<endl;
         }
     }
     int dequeue(){
+      
         if(qfront == rear){
             return -1;
         }
@@ -38,10 +40,13 @@ class Queue{
             int ans = arr[qfront];
             arr[qfront] = -1;
             qfront++;
+            cout<<qfront<<rear<<endl;
             if(qfront == rear){
                 qfront = 0;
                 rear = 0;
+                cout<<qfront<<rear<<endl;
             }
+            cout<<qfront<<rear<<endl;
             return ans;
         }
     }
@@ -70,18 +75,17 @@ int main(){
     q.enqueue(11);
     q.print();
     q.dequeue();
-    q.print();
-     q.dequeue();
-    q.print();
-     q.dequeue();
-    q.print();
-     q.dequeue();
-    q.print();
-     q.dequeue();
-    q.print();
-     q.dequeue();
-    q.print();
-     q.dequeue();
+    q.dequeue();
+
+    q.dequeue();
+
+    q.dequeue();
+
+    q.dequeue();
+
+    q.dequeue();
+    q.dequeue();
+
     cout<<q.isEmpty();
     return 0;
 }
