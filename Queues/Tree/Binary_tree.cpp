@@ -22,7 +22,7 @@ node* buildTree(node* root){
     }
     cout<<"Enter data for inserting in left "<<data<<endl;
     root->left = buildTree(root->left);
-    cout<<"Enter data for inserting in left"<<data<<endl;
+    cout<<"Enter data for inserting in right"<<data<<endl;
     root->right = buildTree(root->right);
     return root;
 }
