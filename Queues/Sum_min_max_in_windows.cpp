@@ -35,6 +35,6 @@ int solve(int *arr, int n, int k){
 }
  int main(){
     int arr[7] = {2, 5, -1, 7 ,-3 , -1, -2};
-    int k=4;
+    int k=4;  
     cout<<solve(arr, 7 ,k)<<endl;
  }
